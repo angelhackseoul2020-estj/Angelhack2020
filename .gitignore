@@ -35,4 +35,4 @@ out/
 
 ## properties
 src/main/resources/*.yml
-
+logs/*
