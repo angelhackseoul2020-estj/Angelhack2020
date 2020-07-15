@@ -19,6 +19,17 @@ public class SwaggerConfig {
                 .description("API EXAMPLE")
                 .build();
     }
+    @Bean
+    public Docket userApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("users")
+                .apiInfo(this.apiInfo())
+                .select()
+                .apis(RequestHandlerSelectors
+                        .basePackage("com.hack.tm.controller"))
+                .paths(PathSelectors.ant("/users/**"))
+                .build();
+    }
 
     @Bean
     public Docket mainApi() {

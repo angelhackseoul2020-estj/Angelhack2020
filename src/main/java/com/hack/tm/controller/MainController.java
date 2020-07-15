@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/")
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+//@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class MainController {
+
 
     @GetMapping(path = "/hello")
     @ApiOperation(value = "Test sample", tags = "sample")
