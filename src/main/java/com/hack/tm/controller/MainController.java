@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/")
-//@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class MainController {
 
 
-    @GetMapping(path = "/hello")
+    @GetMapping
     @ApiOperation(value = "Test sample", tags = "sample")
-    public ResponseEntity serviceCheck(@RequestParam("id") String id) throws Exception {
-        return ResponseEntity.ok(id);
+    public ResponseEntity serviceCheck() throws Exception {
+        return ResponseEntity.ok("Hello world!");
     }
 
 

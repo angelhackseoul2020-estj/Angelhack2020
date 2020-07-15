@@ -1,8 +1,9 @@
 package com.hack.tm.controller;
 
+import com.hack.tm.domain.Address;
 import com.hack.tm.domain.User;
-import com.hack.tm.dto.CustomerInfo;
 import com.hack.tm.service.UserService;
+import com.hack.tm.vo.DaumMapAddrParam;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,22 +13,31 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
-//@RequiredArgsConstructor(onConstructor = @__(@Autowired))
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class UserController {
 
     private final UserService userService;
 
-    public UserController(@Autowired UserService userService) {
-        this.userService = userService;
+
+    @GetMapping("/{id}/addr")
+    @ApiOperation(value = "사용자 주소정보 조회", tags = "users")
+    public ResponseEntity<Address> getAddress(@PathVariable long id) throws Exception {
+
+        User user = userService.findByUser(id);
+        Address addr = userService.getUserAddress(user);
+
+        return new ResponseEntity<>(addr, HttpStatus.OK);
     }
 
+    @PostMapping("/{id}/addr")
+    @ApiOperation(value = "사용자 주소정보 입력", tags = "users")
+    public ResponseEntity<Address> insertAddress(@PathVariable long id, @RequestBody DaumMapAddrParam param) throws Exception {
 
-    @GetMapping("/{id}")
-    @ApiOperation(value = "로그인", tags = "loginTest")
-    public ResponseEntity<User> loginTest(@PathVariable long id) throws Exception {
-        User user = userService.retrieveUserInfo(id);
 
-        return new ResponseEntity<>(user, HttpStatus.OK);
+        Address addr = userService.insertUserAddress(id, param);
+
+        return new ResponseEntity<>(addr, HttpStatus.OK);
     }
+
 
 }
