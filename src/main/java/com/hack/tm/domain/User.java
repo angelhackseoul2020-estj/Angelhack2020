@@ -25,7 +25,7 @@ public class User {
     @Enumerated(value = EnumType.STRING)
     private Authority authority;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ADDR_ID")
     private Address addr;
 
