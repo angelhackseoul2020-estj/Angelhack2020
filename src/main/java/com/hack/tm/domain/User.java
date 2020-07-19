@@ -8,12 +8,13 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Builder
+@Table(name = "user")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class User {
 
     @Id
-    @Column(name = "USER_ID")
+    @Column(name = "user_id")
     private Long id; // kakao
 
     private String name; // nickname;
@@ -26,7 +27,7 @@ public class User {
     private Authority authority;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ADDR_ID")
+    @JoinColumn(name = "addr_id")
     private Address addr;
 
     public void updateAddr(Address addr) {

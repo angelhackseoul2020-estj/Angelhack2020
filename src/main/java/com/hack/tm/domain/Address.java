@@ -8,12 +8,13 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Builder
+@Table(name = "address")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 public class Address {
 
     @Id
-    @Column(name = "ADDR_ID")
+    @Column(name = "addr_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
