@@ -12,6 +12,7 @@ public class DealStoreResponse {
     private Long id;
     private String storeName;
     private String storeImage;
+    private String productImage;
     private LocalDateTime limitTime;
 
     private int price; //원가

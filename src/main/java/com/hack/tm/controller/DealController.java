@@ -57,6 +57,7 @@ public class DealController {
                     .id(product.getId())
                     .storeName(store.getName())
                     .storeImage(store.getImageUrl())
+                    .productImage(product.getImage_url())
                     .limitTime(product.getHotDeals().get(0).getGoalDt())
                     .price(product.getPrice())
                     .discountRate(product.getHotDeals().get(0).getDiscountRate())
