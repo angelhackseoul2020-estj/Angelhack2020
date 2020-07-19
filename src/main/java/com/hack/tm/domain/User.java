@@ -20,7 +20,7 @@ public class User {
     private String name; // nickname;
     private String profileImage; // 640 * 640
     private String thumbnailImage; // 110 * 110
-    private String phoneNumber; //
+//    private String phoneNumber; //
 
 
     @Enumerated(value = EnumType.STRING)

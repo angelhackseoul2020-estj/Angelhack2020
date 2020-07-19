@@ -1,5 +1,6 @@
 package com.hack.tm.vo;
 
+import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -8,12 +9,13 @@ import lombok.Getter;
 @Builder
 @AllArgsConstructor
 public class DealStoreResponse {
+    private Long id;
     private String storeName;
     private String storeImage;
-    private String limitTime;
+    private LocalDateTime limitTime;
 
     private int price; //원가
-    private int discountRate; //
+    private Float discountRate; //
 
     private int nowPeopleCnt;
     private int limitPeopleCnt;

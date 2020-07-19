@@ -26,7 +26,7 @@ public class AuthServiceImpl implements AuthService {
         return User.builder().id(param.getId())
                 .authority(Authority.CUSTOMER)
                 .name(param.getProperties().getNickname())
-                .phoneNumber(param.getKakao_account().getPhone_number())
+//                .phoneNumber(param.getKakao_account().getPhone_number())
                 .profileImage(param.getProperties().getProfile_image())
                 .thumbnailImage(param.getProperties().getThumbnail_image())
                 .build();
