@@ -16,10 +16,8 @@ public class DealStoreResponse {
     private LocalDateTime limitTime;
 
     private int price; //원가
-    private Float discountRate; //
+    private Float discountRate;
 
     private int nowPeopleCnt;
     private int limitPeopleCnt;
-
-
 }

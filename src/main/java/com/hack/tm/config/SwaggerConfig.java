@@ -38,6 +38,19 @@ public class SwaggerConfig {
                 .build();
     }
 
+    public Docket productApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+            .groupName("auth")
+            .apiInfo(this.apiInfo())
+            .produces(new HashSet<>(
+                Collections.singletonList("application/json")))
+            .select()
+            .apis(RequestHandlerSelectors.basePackage("com.hack.tm.controller"))
+            .paths(PathSelectors.ant("/deal/**"))
+            .build();
+    }
+
+
     @Bean
     public Docket userApi() {
         return new Docket(DocumentationType.SWAGGER_2)

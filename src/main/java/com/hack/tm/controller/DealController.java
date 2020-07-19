@@ -6,6 +6,7 @@ import com.hack.tm.domain.Product;
 import com.hack.tm.domain.Store;
 import com.hack.tm.service.DealService;
 import com.hack.tm.vo.DealStoreResponse;
+import io.swagger.annotations.ApiOperation;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -31,6 +32,7 @@ public class DealController {
 
 
     @GetMapping
+    @ApiOperation(value = "할인 가게 조회 (위치 동 기준)", tags = "sales")
     public ResponseEntity<Object> findDealList(@RequestParam("hname") String hname)
         throws Exception { //동 기준 매핑
 
