@@ -5,8 +5,10 @@
 
 #### 실행방법
 
-'''
+```
 git clone https://github.com/angelhackseoul2020-estj/Angelhack2020
+
 cd ./build/lib
+
 java -jar tm-0.0.1-SNAPSHOT.jar 
-'''
+```
